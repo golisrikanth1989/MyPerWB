@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, GraduationCap, Github, Fingerprint, Radio } from "lucide-react";
+import { Linkedin, GraduationCap, Github, Fingerprint } from "lucide-react";
 import Container from "../ui/Container";
 import { navLinks, site } from "../../data/site";
 
@@ -26,11 +26,13 @@ export default function Footer() {
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-ink text-white">
-                <Radio size={18} />
-              </span>
-              <span className="font-display text-[1.05rem] font-semibold text-ink">
+            <div className="flex items-center gap-3">
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo-dark.png`}
+                alt=""
+                className="h-11 w-11 object-contain"
+              />
+              <span className="font-display text-2xl font-bold text-ink">
                 {site.name}
               </span>
             </div>

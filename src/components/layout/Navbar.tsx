@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Download, Radio } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { navLinks, site } from "../../data/site";
@@ -58,10 +58,12 @@ export default function Navbar() {
           className="flex items-center gap-2.5 group"
           onClick={() => setOpen(false)}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-ink text-white transition-transform duration-300 group-hover:rotate-6">
-            <Radio className="h-4.5 w-4.5" size={18} />
-          </span>
-          <span className="font-display text-[1.05rem] font-semibold tracking-tight text-ink">
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo-dark.png`}
+            alt=""
+            className="h-11 w-11 object-contain transition-transform duration-300 group-hover:rotate-6"
+          />
+          <span className="font-display whitespace-nowrap text-xl font-bold tracking-tight text-ink">
             Srikanth Goli
           </span>
         </Link>
@@ -73,7 +75,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 to={linkTarget(link.href)}
-                className={`relative rounded-full px-4 py-2 text-[13.5px] font-medium transition-colors ${
+                className={`relative whitespace-nowrap rounded-full px-3 py-2 text-[13px] font-medium transition-colors ${
                   isActive ? "text-ink" : "text-ink-soft hover:text-ink"
                 }`}
               >
