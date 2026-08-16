@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srikanth Goli — Wireless Systems Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF8;
+    --ink:#171717;
+    --ink-soft:#5C5C58;
+    --line:#E6E4DE;
+    --accent:#3D5A80;
+    --accent-soft:#E4EAF1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;}
+  a{color:inherit;}
+  ::selection{background:var(--accent-soft);}
+
+  .wrap{max-width:800px;margin:0 auto;padding:0 28px;}
+
+  header{padding:80px 0 48px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+  .eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+  h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:clamp(34px,5.5vw,50px);letter-spacing:-0.01em;}
+  header p.role{margin-top:16px;font-size:17px;color:var(--ink-soft);max-width:56ch;}
+  nav{margin-top:32px;display:flex;gap:20px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:13px;}
+  nav a{color:var(--ink-soft);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;transition:.15s;}
+  nav a:hover{color:var(--ink);border-color:var(--accent);}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;}
+  h2{font-family:'Source Serif 4',serif;font-weight:500;font-size:26px;margin-bottom:18px;}
+  section > p{color:var(--ink-soft);max-width:64ch;font-size:16px;margin-bottom:8px;}
+
+  .timeline{margin-top:24px;display:flex;flex-direction:column;gap:0;}
+  .role{padding:18px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:120px 1fr;gap:16px;}
+  .role:last-child{border-bottom:1px solid var(--line);}
+  .role .when{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);padding-top:2px;}
+  .role .what strong{font-size:15.5px;}
+  .role .org{color:var(--accent);font-size:14px;margin:2px 0 6px;}
+  .role .desc{color:var(--ink-soft);font-size:14.5px;}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:24px;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .skill{padding:18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .skill .k{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+  .skill .v{font-size:14.5px;line-height:1.5;}
+
+  .pubs{margin-top:22px;display:flex;flex-direction:column;gap:16px;}
+  .pub{font-size:14.5px;color:var(--ink-soft);padding-left:18px;border-left:2px solid var(--line);}
+  .pub .t{color:var(--ink);font-weight:500;}
+  .pub .j{font-style:italic;}
+  .pub a{color:var(--accent);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:12.5px;}
+  .pub a:hover{text-decoration:underline;}
+
+  .interests{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .pill{font-family:'JetBrains Mono',monospace;font-size:13px;padding:7px 14px;border:1px solid var(--line);border-radius:100px;color:var(--ink-soft);}
+
+  .fun-block{margin-top:22px;padding:20px 22px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);font-size:15px;color:var(--ink-soft);}
+  .fun-block .prompt{font-family:'JetBrains Mono',monospace;color:var(--accent);}
+
+  .posts{margin-top:22px;display:flex;flex-direction:column;}
+  .post{padding:18px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:16px;text-decoration:none;color:inherit;}
+  .post:last-child{border-bottom:1px solid var(--line);}
+  .post .title{font-size:15.5px;font-weight:500;}
+  .post .title small{display:block;font-weight:400;color:var(--ink-soft);font-size:13.5px;margin-top:3px;}
+  .post .date{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-soft);white-space:nowrap;}
+  .post:hover .title{color:var(--accent);}
+  .view-all{margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);text-decoration:none;}
+  .view-all:hover{text-decoration:underline;}
+
+  footer{padding:44px 0 80px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer .links{display:flex;gap:20px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+  footer .links a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid transparent;}
+  footer .links a:hover{color:var(--ink);border-color:var(--accent);}
+  footer .copy{font-size:13px;color:var(--ink-soft);}
+
+  @media (max-width:600px){
+    .role{grid-template-columns:1fr;gap:4px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Nalgonda, India / Luxembourg</div>
+    <h1>Srikanth Goli</h1>
+    <p class="role">Postdoctoral Fellow at University of Luxembourg, working on 5G/6G Terrestrial and Non-Terrestrial Networks. PhD in Wireless Communications & Signal Processing.</p>
+    <nav>
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#expertise">expertise</a>
+      <a href="#publications">publications</a>
+      <a href="#interests">interests</a>
+      <a href="#fun">fun</a>
+      <a href="#blog">blog</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <div class="tag">01 — about</div>
+    <h2>Who I am</h2>
+    <p>I'm a wireless systems researcher with 7+ years building and testing 4G/5G/6G networks — from open-source testbeds (OAI, srsRAN, Open5GS, free5GC) running on real SDR hardware, to the physical-layer math underneath (OFDM, Massive MIMO, precoding). My PhD introduced Ramanujan Periodic Subspace Division Multiplexing (RPSDM), a new waveform inspired by number theory that outperforms OFDM on PAPR and BER.</p>
+    <p>Currently I work on Terrestrial-to-Non-Terrestrial handover and Doppler compensation at the University of Luxembourg. I like problems that sit at the intersection of theory and hardware — where an idea from a math paper has to survive contact with a real USRP.</p>
+  </section>
+
+  <section id="experience">
+    <div class="tag">02 — experience</div>
+    <h2>Where I've worked</h2>
+    <div class="timeline">
+      <div class="role">
+        <div class="when">2025 — present</div>
+        <div class="what">
+          <strong>Postdoctoral Fellow, Research Associate</strong>
+          <div class="org">University of Luxembourg</div>
+          <div class="desc">5G Terrestrial & Non-Terrestrial Networks — Handover, Doppler compensation, SIB-19 implementation in OAI.</div>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2024 — 2025</div>
+        <div class="what">
+          <strong>Staff Engineer</strong>
+          <div class="org">Bloxtel, Bangalore</div>
+          <div class="desc">5G handover & roaming — N2/N14/N32 inter-AMF handover, deployment of Rapid Space, Rakwireless & Baicell access points.</div>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2021 — 2023</div>
+        <div class="what">
+          <strong>Research Engineer / Patent Analyst</strong>
+          <div class="org">Dolcera ITES, Hyderabad</div>
+          <div class="desc">4G/5G testbeds (OAI, srsLTE, free5GC, MAGMACORE) on USRP B210/N310; SEP patent mapping for Wi-Fi & 4G/5G against 3GPP Rel. 17/18.</div>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2019 — 2021</div>
+        <div class="what">
+          <strong>Senior Research Fellow</strong>
+          <div class="org">AIMSCS, Hyderabad</div>
+          <div class="desc">4G-LTE testbed (srsLTE/OAI on USRP B210), Tracking Area Update procedures, Wireshark-based payload analysis.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="tag">03 — expertise</div>
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div class="skill"><div class="k">languages</div><div class="v">Python (Sionna), C/C++, Go</div></div>
+      <div class="skill"><div class="k">tools</div><div class="v">MATLAB, Mathematica, Wireshark, LaTeX</div></div>
+      <div class="skill"><div class="k">hardware</div><div class="v">NI USRP B210/N310, Quectel, Raspberry Pi, STM32</div></div>
+      <div class="skill"><div class="k">stacks</div><div class="v">OpenAirInterface, srsRAN, Open5GS, free5GC, MAGMACORE</div></div>
+      <div class="skill"><div class="k">research areas</div><div class="v">5G/6G NTN, Massive MIMO, AI/ML for wireless</div></div>
+      <div class="skill"><div class="k">standards</div><div class="v">3GPP TS 38.211/212, Release 17/18, SEP mapping</div></div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="tag">04 — publications</div>
+    <h2>Selected publications</h2>
+    <div class="pubs">
+      <div class="pub"><span class="t">RPDMA: A PAPR-Aware Multiple Access Scheme.</span> <span class="j">IEEE Open Journal of Vehicular Technology</span>, vol. 7, 2026. <br><a href="https://doi.org/10.1109/OJVT.2026.3661153" target="_blank">doi.org/10.1109/OJVT.2026.3661153</a></div>
+      <div class="pub"><span class="t">PAPR Performance Evaluation of OFDM, RPDM, and ORPDM Multicarrier Modulation Schemes.</span> <span class="j">IEEE Open Journal of the Communications Society</span>, vol. 6, 2025. <br><a href="https://doi.org/10.1109/OJCOMS.2025.3579725" target="_blank">doi.org/10.1109/OJCOMS.2025.3579725</a></div>
+      <div class="pub"><span class="t">Ramanujan Periodic Subspace Division Multiplexing.</span> <span class="j">IET Communications</span>, vol. 13, no. 15, 2019. <br><a href="https://doi.org/10.1049/iet-com.2018.5828" target="_blank">doi.org/10.1049/iet-com.2018.5828</a></div>
+      <div class="pub"><span class="t">Convergence of Massive MIMO Frequency Selective Channels.</span> <span class="j">TENCON 2019</span>, Kochi, India.</div>
+      <div class="pub"><span class="t">Performance Analysis of Linear Precoders and SVD in Downlink Massive MIMO Frequency Selective Channels.</span> <span class="j">ICSC</span>, Noida, 2016.</div>
+      <div class="pub"><span class="t">Space-Time Block Based Linear Precoders for Multi-User Massive MIMO Frequency Selective Broadcast Channels.</span> <span class="j">WiSPNET</span>, Chennai, 2017.</div>
+    </div>
+  </section>
+
+  <section id="interests">
+    <div class="tag">05 — interests</div>
+    <h2>What I'm into</h2>
+    <div class="interests">
+      <span class="pill">5G / 6G open-source tools</span>
+      <span class="pill">Non-Terrestrial Networks</span>
+      <span class="pill">AI/ML for wireless</span>
+      <span class="pill">Ramanujan subspaces, beyond wireless</span>
+    </div>
+  </section>
+
+  <section id="fun">
+    <div class="tag">06 — fun</div>
+    <h2>Something unserious</h2>
+    <div class="fun-block"><span class="prompt">$</span> whoami<br>
+    Srikanth — someone who took a 300-year-old number theory idea (Ramanujan sums) and used it to build a wireless waveform.<br><br>
+    <span class="prompt">$</span> fun_fact<br>
+    Debugged 5G handover failures for a living, then went home and probably had a much simpler network problem — Wi-Fi not connecting.</div>
+  </section>
+
+  <section id="blog">
+    <div class="tag">07 — blog</div>
+    <h2>Notes & learnings</h2>
+    <p>Short write-ups as I learn — testbeds, papers I found interesting, things that broke and how I fixed them.</p>
+    <div class="posts">
+      <a class="post" href="blog/sample-post.html">
+        <div class="title">Setting up your first OAI 5G testbed<small>A walkthrough of the gotchas nobody warns you about.</small></div>
+        <div class="date">Aug 2026</div>
+      </a>
+    </div>
+    <a class="view-all" href="blog.html">view all posts →</a>
+  </section>
+
+  <footer>
+    <div class="links">
+      <a href="mailto:golisrikanth1989@gmail.com">email</a>
+      <a href="https://linkedin.com/in/golisrikanth1989" target="_blank">linkedin</a>
+      <a href="https://github.com/golisrikanth1989" target="_blank">github</a>
+    </div>
+    <div class="copy">© 2026 Srikanth Goli</div>
+  </footer>
+</div>
+
+</body>
+</html>
