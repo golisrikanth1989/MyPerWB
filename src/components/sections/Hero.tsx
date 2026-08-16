@@ -7,7 +7,7 @@ import { site } from "../../data/site";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section className="relative overflow-hidden pt-16 pb-20 sm:pt-20 sm:pb-28">
       <div className="pointer-events-none absolute inset-0 bg-grid-faint bg-[length:44px_44px] opacity-[0.35] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
       <div className="pointer-events-none absolute -top-40 right-[-10%] h-[420px] w-[420px] rounded-full bg-brand-100/60 blur-3xl" />
 

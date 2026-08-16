@@ -6,6 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keeps anchor-jump targets clear of the fixed navbar */
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
 body {
   font-family: "Inter", system-ui, sans-serif;
 }

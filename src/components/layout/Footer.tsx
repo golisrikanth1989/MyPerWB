@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Linkedin, GraduationCap, Github, Fingerprint, Radio } from "lucide-react";
 import Container from "../ui/Container";
 import { navLinks, site } from "../../data/site";
@@ -10,8 +11,14 @@ const socials = [
 ];
 
 const footerLinks = navLinks.filter((l) =>
-  ["Home", "About", "Research", "Projects", "Publications", "Contact"].includes(l.label)
+  ["Home", "About", "Research", "Projects", "Publications", "My Learning", "Contact"].includes(
+    l.label
+  )
 );
+
+function linkTarget(href: string) {
+  return href.startsWith("#") ? { pathname: "/", hash: href } : href;
+}
 
 export default function Footer() {
   return (
@@ -39,12 +46,12 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={linkTarget(link.href)}
                     className="text-sm text-ink-soft transition-colors hover:text-ink"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

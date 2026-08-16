@@ -25,16 +25,16 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 sm:py-32">
+    <section id="about" className="pt-32 pb-24 sm:pt-40 sm:pb-32">
       <Container>
         <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
           <Reveal>
             <div className="relative mx-auto max-w-sm lg:mx-0">
               <div className="absolute -inset-3 rounded-[2rem] border border-dashed border-line" />
-              {/* Portrait photo — served from public/images/portrait.jpg */}
+              {/* Portrait photo — served from public/images/portrait.png */}
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] border border-line bg-gradient-to-br from-ink to-brand-800 shadow-card">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/portrait.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/portrait.png`}
                   alt="Srikanth Goli"
                   className="h-full w-full object-cover"
                 />

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Srikanth Goli</title>
+    <!--
+      GitHub Pages is a static host with no server-side routing, so a direct
+      visit or refresh on a client-side route (e.g. /MyPerWB/learning) would
+      otherwise hit GitHub's real 404. This redirects that request back to
+      index.html with the intended path encoded in the query string; the
+      restoration script in index.html decodes it before React mounts, so
+      React Router picks up the correct route. Standard technique, see:
+      https://github.com/rafgraph/spa-github-pages
+    -->
+    <script>
+      var pathSegmentsToKeep = 1; // keep "/MyPerWB" as the site root
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+        l.pathname.split("/").slice(0, 1 + pathSegmentsToKeep).join("/") + "/?/" +
+        l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

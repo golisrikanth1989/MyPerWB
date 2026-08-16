@@ -1,35 +1,45 @@
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import Research from "./components/sections/Research";
-import Projects from "./components/sections/Projects";
-import ArchitectureVisualization from "./components/sections/ArchitectureVisualization";
-import Publications from "./components/sections/Publications";
-import Experience from "./components/sections/Experience";
-import Skills from "./components/sections/Skills";
-import Journey from "./components/sections/Journey";
-import Blog from "./components/sections/Blog";
-import Contact from "./components/sections/Contact";
+import Home from "./pages/Home";
+import Learning from "./pages/Learning";
+
+// Vite base already carries the GitHub Pages repo prefix (e.g. "/MyPerWB/"),
+// so deriving basename from it keeps routing correct without hardcoding it twice.
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+
+function ScrollManager() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) {
+        requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth" }));
+        return;
+      }
+    }
+    window.scrollTo({ top: 0 });
+  }, [location.pathname, location.hash]);
+
+  return null;
+}
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-paper">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Research />
-        <Projects />
-        <ArchitectureVisualization />
-        <Publications />
-        <Experience />
-        <Skills />
-        <Journey />
-        <Blog />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter basename={basename}>
+      <div className="min-h-screen bg-paper">
+        <ScrollManager />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/learning" element={<Learning />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
