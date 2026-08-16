@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Srikanth Goli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF8; --ink:#171717; --ink-soft:#5C5C58;
+    --line:#E6E4DE; --accent:#3D5A80; --accent-soft:#E4EAF1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;}
+  a{color:inherit;}
+  .wrap{max-width:800px;margin:0 auto;padding:0 28px;}
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line);}
+  .back{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);text-decoration:none;}
+  h1{font-family:'Source Serif 4',serif;font-weight:500;font-size:clamp(30px,5vw,42px);margin-top:20px;}
+  header p{margin-top:12px;color:var(--ink-soft);font-size:16px;}
+  .posts{padding:20px 0;}
+  .post{padding:22px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:16px;text-decoration:none;color:inherit;}
+  .post .title{font-size:16px;font-weight:500;}
+  .post .title small{display:block;font-weight:400;color:var(--ink-soft);font-size:14px;margin-top:4px;}
+  .post .date{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-soft);white-space:nowrap;}
+  .post:hover .title{color:var(--accent);}
+  footer{padding:44px 0 80px;font-size:13px;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="back" href="index.html">← back home</a>
+    <h1>Notes & learnings</h1>
+    <p>A running log of things I'm learning — testbeds, papers, tools, and the occasional dumb bug that took three days to find.</p>
+  </header>
+
+  <div class="posts">
+    <a class="post" href="blog/sample-post.html">
+      <div class="title">Setting up your first OAI 5G testbed<small>A walkthrough of the gotchas nobody warns you about.</small></div>
+      <div class="date">Aug 2026</div>
+    </a>
+    <!-- Add new posts here: copy the <a class="post"> block above, update title/link/date -->
+  </div>
+
+  <footer>© 2026 Srikanth Goli</footer>
+</div>
+</body>
+</html>
